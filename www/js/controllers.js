@@ -112,6 +112,7 @@ angular.module('species.controllers', [])
 		var radius2 = ball2.bounds.width / 2;
 		var pi2 = Math.PI / 2;
 		var d = center1.getDistance(center2);
+		console.log(d);
 		var u1, u2;
 
 		if (radius1 == 0 || radius2 == 0) {
@@ -124,7 +125,7 @@ angular.module('species.controllers', [])
 		else {
 			colors.push({ rgb: ball1.fillColor.components });
 			setLargeBallColor();
-			SpeciesService.emit('client-sendData', { bool: true, value: d*20, specie: specie }, null);
+			SpeciesService.emit('client-sendData', { bool: true, value: d*0.5, specie: specie }, null);
 		}
 		if (d > maxDistance || d <= Math.abs(radius1 - radius2)) {
 			return;

@@ -1,7 +1,7 @@
 angular.module('species.services', [])
 
 .factory('SpeciesService', function($rootScope) {
-  var socket = io.connect("http://species.kspri.se");
+  var socket = io.connect("http://species-kspri.rhcloud.com/");
   var rootScope = $rootScope;
 
   return {
